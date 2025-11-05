@@ -1,16 +1,16 @@
-init -10 python:
-    class Quest:
-        def __init__(self,id,content,isdone):
-            self.id = id
-            self.text = content
-            self.isDone = isdone
-    QUESTS = {
+default  QUESTS = {
     "bedroom": [
         Quest(1, "Tắt đồng hồ", False),
         Quest(2, "Dọn chăn gối", False),
         Quest(3, "Mặc áo", False)
     ]
     }
+init -10 python:
+    class Quest:
+        def __init__(self,id,content,isdone):
+            self.id = id
+            self.text = content
+            self.isDone = isdone
     # --- Lấy quest theo ID ---
     def get_quest_by_id(qid, area="bedroom"):
         for q in QUESTS.get(area, []):

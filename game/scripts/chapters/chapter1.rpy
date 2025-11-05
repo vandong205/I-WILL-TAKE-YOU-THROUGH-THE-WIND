@@ -2,8 +2,9 @@ transform fade_out:
     linear 0.4 alpha 0.0
 # --- Màn hình tìm đồ trong phòng ---
 screen bedroom_find_objects():
-    default quests = [q for q in QUESTS["bedroom"]]
-
+    on "show" action Show("quest_list_ui")
+    python:
+        queststack.add(QUESTS["bedroom"])
     add "bg bedroom" xpos -50 ypos -23
 
     # --- 1. Đồng hồ ---
@@ -39,7 +40,8 @@ screen bedroom_find_objects():
     else:
         add "shirt" xpos 0.36 ypos 0.016 at fade_out
     if all_quests_done("bedroom"):
-        timer 1.0 action Return(True)
+        on "hide" action Hide("quest_list_ui")
+        timer 1.0 action [Return(True), Function(lambda: queststack.clear())]
 
 label chapter1:
     "Reng reng rengggg ... "
@@ -62,9 +64,10 @@ label chapter1:
     # 3. HIỆN MÀN TÌM ĐỒ (nền + đồ cùng lúc, mượt mà!)
     call screen bedroom_find_objects
     # 4. QUAY LẠI CẢNH PHÒNG NGỦ RỘNG
-    scene bg bedroom with dissolve
+    scene bg bedroom:
+        xpos -50 ypos -23
+    with dissolve
     window show
     LamNguyet "Xong!Mau đi đến địa điểm phỏng vấn!!"
-    show screen quest_screen
     "pause"
     return
