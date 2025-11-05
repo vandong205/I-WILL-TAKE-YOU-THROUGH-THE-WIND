@@ -1,0 +1,1 @@
+define LamNguyet = Character("Lâm Nguyệt")
