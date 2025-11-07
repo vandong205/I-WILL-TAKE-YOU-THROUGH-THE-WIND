@@ -20,3 +20,10 @@ image item blanket = "game/images/Chapter1/bedroom/items/blanket.webp"
 
 image bg street_run = "images/Chapter1/street/run.webp"
 image bg street_side_view = "images/Chapter1/street/street_side_view.webp"
+
+image item bread = "images/Chapter1/street/items/bread.png"
+
+#Company
+image bg company_entry = "images/Chapter1/company/company_entry.webp"
+image bg interview_table = "images/Chapter1/company/interview.webp"
+
