@@ -223,6 +223,8 @@ label chapter1:
     show bg company_entry
     "Tập đoàn Tần Thị"
     hide bg company_entry with dissolve
-    show bg interview_table with dissolve
-    "pause"
+    show expression "images/Chapter1/company/picture1.webp" with dissolve
+    LamNguyet"Sếp đến chưa nhỉ ..."
+    show expression "images/Chapter1/company/picture2.webp" 
+    TanVu"Cô đến sớm quá nhỉ"
     return
