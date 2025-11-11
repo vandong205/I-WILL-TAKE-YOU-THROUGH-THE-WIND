@@ -191,10 +191,11 @@ screen street_jumping_minigame():
     #             ysize item["height"]
 
 label chapter1:
+    transition_text "Ngày 4 tháng 9 năm 2024"
     "Reng reng rengggg ... "
-    LamNguyet "Cái gì vậy ~~"
-    LamNguyet "Để người ta còn ngủ chứ .. "
-    LamNguyet "Mà khoan đã..."
+    LamVi "Cái gì vậy ~~"
+    LamVi "Để người ta còn ngủ chứ .. "
+    LamVi "Mà khoan đã..."
 
     show screen custom_bbspeech("serius", "Hôm nay mình phải đi phỏng vấn mà !",
         textsize=30, textcolor="#202020", posx=0.5, posy=0.4, padx=200, pady=200)
@@ -203,7 +204,7 @@ label chapter1:
     # 1. CẢNH PHÒNG NGỦ RỘNG
     scene bg bedroom_full with dissolve
     window hide
-    LamNguyet "Mình sẽ muộn mất! Nhanh nhanh dọn đồ đạc thôi"
+    LamVi "Mình sẽ muộn mất! Nhanh nhanh dọn đồ đạc thôi"
 
     # 2. CHUYỂN SANG MÀN ĐEN (tránh flash)
     scene black with dissolve
@@ -214,17 +215,46 @@ label chapter1:
     with dissolve
     window show
     show bg street_run
-    LamNguyet "Hy vọng hôm nay không tắc đường…"
+    LamVi "Hy vọng hôm nay không tắc đường…"
     scene lightblue
     window hide
     call screen street_jumping_minigame
+    scene black 
     window show
-    scene black
     show bg company_entry
     "Tập đoàn Tần Thị"
     hide bg company_entry with dissolve
-    show expression "images/Chapter1/company/picture1.webp" with dissolve
-    LamNguyet"Sếp đến chưa nhỉ ..."
-    show expression "images/Chapter1/company/picture2.webp" 
-    TanVu"Cô đến sớm quá nhỉ"
+    scene expression "images/Chapter1/company/picture1.webp" with dissolve
+    LamVi"Sếp đến chưa nhỉ ..."
+    scene expression "images/Chapter1/company/picture2.webp" 
+    Dummy"Lâm Vi!"
+    scene expression "images/Chapter1/company/picture3.webp" 
+    TanVu"Còn định đứng ngoài đó đến bao giờ ? Đi muộn lần thứ hai trong tuần rồi"
+    menu :
+        "Lựa chọn lý do hợp lý và xin lỗi ":
+            LamVi"Hôm nay có chút tắc đường . Xin lỗi sếp"
+            TanVu"Tập trung vào nhé . Vào phòng tôi có chút việc ."
+        "Thành thật và xin lỗi":
+            LamVi"Em hôm nay dậy muộn một chút . Em xin lỗi"
+            TanVu"Được rồi. Vào phòng tôi có chút việc ."
+    scene expression "images/Chapter1/company/picture4.webp" with dissolve
+    TanVu"Dự án quảng bá sắp tới vẫn chưa có quản lý , cô đảm nhận giúp tôi nhé ?"
+    LamVi"Dạ..được ạ"
+    TanVu"Trông cậy vào cô "
+    TanVu"Sắp tới sẽ có một thực tập sinh mới.Cậu ta sẽ hỗ trợ truyền thông đến hết dự án này"
+    TanVu"Ngày mai cậu ta sẽ tới .Hỗ trợ cậu ấy giúp tôi nhé ?"
+    LamVi"Dạ vâng"
+    scene black 
+    transition_text "Ngày 5 tháng 9 năm 2024"  with fade
+    show dp_knock with fade
+    play sound "audio/SFX/knock.ogg" loop
+    pause 1.0
+    "*Knock knock"
+    stop sound  
+    hide dp_knock
+    show expression "images/Chapter1/sprites/knock/knock0000.png"
+    LamVi"Vào đi"
+    show expression "images/Chapter1/company/picture6.webp" with dissolve
+    pause 0.5
+    "pause"
     return

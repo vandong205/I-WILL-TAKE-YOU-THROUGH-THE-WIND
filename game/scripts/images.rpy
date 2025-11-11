@@ -2,13 +2,6 @@
 #Color
 image lightblue = Solid("#598b9b")
 
-#Character
-image ln_run = Animation(
-    "images/Chapter1/sprites/lamnguyet/lnrun1.png", 0.18,
-    "images/Chapter1/sprites/lamnguyet/lnrun2.png", 0.18,
-    "images/Chapter1/sprites/lamnguyet/lnrun3.png", 0.18,
-    loop=True
-)
 image ln_jump = "images/Chapter1/sprites/lamnguyet/lnrun3.png"
 #Bedroom
 image bg bedroom = "images/Chapter1/bedroom/bedroom.webp"
